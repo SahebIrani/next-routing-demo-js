@@ -1,6 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
@@ -11,13 +12,49 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <ul>
+        <li>
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/about">
+            <a>About Us</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/blog/hello-world">
+            <a>Blog Post</a>
+          </Link>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <Link href="/post/abc">
+            <a>Go to pages/post/[pid].js</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/post/abc?foo=bar">
+            <a>Also goes to pages/post/[pid].js</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/post/abc/a-comment">
+            <a>Go to pages/post/[pid]/[comment].js</a>
+          </Link>
+        </li>
+      </ul>
+
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome SinjulMSBH to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
@@ -58,12 +95,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }
